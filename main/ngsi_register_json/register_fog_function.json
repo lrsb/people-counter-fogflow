@@ -1,0 +1,126 @@
+{
+  "contextElements": [
+    {
+      "entityId": {
+        "id": "FogFunction.PeopleCounter",
+        "type": "FogFunction",
+        "isPattern": false
+      },
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string",
+          "value": "PeopleCounter"
+        },
+        {
+          "name": "topology",
+          "type": "object",
+          "value": {
+            "name": "PeopleCounter",
+            "description": "",
+            "tasks": [
+              {
+                "name": "main",
+                "operator": "peoplecounter",
+                "input_streams": [
+                  {
+                    "selected_type": "PeopleCounter",
+                    "selected_attributes": [],
+                    "groupby": "EntityType",
+                    "scoped": false
+                  }
+                ],
+                "output_streams": [
+                  {
+                    "entity_type": "Out"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "designboard",
+          "type": "object",
+          "value": {
+            "edges": [
+              {
+                "id": 1,
+                "block1": 2,
+                "connector1": [
+                  "stream",
+                  "output"
+                ],
+                "block2": 1,
+                "connector2": [
+                  "streams",
+                  "input"
+                ]
+              }
+            ],
+            "blocks": [
+              {
+                "id": 1,
+                "x": 40,
+                "y": -68,
+                "type": "Task",
+                "module": null,
+                "values": {
+                  "name": "main",
+                  "operator": "peoplecounter",
+                  "outputs": [
+                    "Out"
+                  ]
+                }
+              },
+              {
+                "id": 2,
+                "x": -275,
+                "y": -74,
+                "type": "EntityStream",
+                "module": null,
+                "values": {
+                  "selectedtype": "PeopleCounter",
+                  "selectedattributes": [
+                    "all"
+                  ],
+                  "groupby": "EntityType",
+                  "scoped": false
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "intent",
+          "type": "object",
+          "value": {
+            "topology": "PeopleCounter",
+            "priority": {
+              "exclusive": false,
+              "level": 0
+            },
+            "qos": "default",
+            "geoscope": {
+              "scopeType": "global",
+              "scopeValue": "global"
+            }
+          }
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "value": "enabled"
+        }
+      ],
+      "domainMetadata": [
+        {
+          "name": "location",
+          "type": "global",
+          "value": "global"
+        }
+      ]
+    }
+  ],
+  "updateAction": "UPDATE"
+}

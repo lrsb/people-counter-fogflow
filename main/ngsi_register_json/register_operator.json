@@ -1,0 +1,49 @@
+{
+  "contextElements": [
+    {
+      "entityId": {
+        "id": "peoplecounter",
+        "type": "Operator"
+      },
+      "attributes": [
+        {
+          "name": "designboard",
+          "type": "object",
+          "value": {
+            "blocks": [
+              {
+                "id": 1,
+                "module": null,
+                "type": "Operator",
+                "values": {
+                  "description": "",
+                  "name": "peoplecounter"
+                },
+                "x": -186,
+                "y": -69
+              }
+            ],
+            "edges": []
+          }
+        },
+        {
+          "name": "operator",
+          "type": "object",
+          "value": {
+            "description": "",
+            "name": "peoplecounter",
+            "parameters": []
+          }
+        }
+      ],
+      "domainMetadata": [
+        {
+          "name": "location",
+          "type": "global",
+          "value": "global"
+        }
+      ]
+    }
+  ],
+  "updateAction": "UPDATE"
+}

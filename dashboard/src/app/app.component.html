@@ -1,0 +1,54 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span>People counter dashboard</span>
+        <span class="total-spacer"></span>
+        <button (click)="randomizeAll()" class="right-spaced" mat-button>Randomize all</button>
+        <span class="right-spaced">Number of counters</span>
+        <mat-slider (valueChange)="sliderValueChanged()" [(ngModel)]="counterNumber" [value]="counterNumber" max="100"
+                    min="1" step="1"></mat-slider>
+        <span>{{counterNumber}}</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="mat-elevation-z8">
+    <table [dataSource]="dataSource" mat-table>
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="name">
+            <th *matHeaderCellDef mat-header-cell> Name</th>
+            <td *matCellDef="let element" mat-cell> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="affluence">
+            <th *matHeaderCellDef mat-header-cell> Affluence data</th>
+            <td *matCellDef="let element" mat-cell> {{element.affluence | json}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="next">
+            <th *matHeaderCellDef mat-header-cell> Next</th>
+            <td *matCellDef="let element" mat-cell> {{element.nextCounter}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="control">
+            <th *matHeaderCellDef mat-header-cell> Control affluence</th>
+            <td *matCellDef="let element" mat-cell>
+                <mat-slider (valueChange)="elementValueChanged(element)"
+                            [(ngModel)]="element.nextAffluence"
+                            [disabled]="element.random" [value]="element.nextAffluence" max="100"
+                            min="0"
+                            step="1"></mat-slider>
+                <span class="right-spaced">{{element.nextAffluence}}</span>
+                <mat-slide-toggle (toggleChange)="element.random = !element.random"
+                                  [checked]="element.random">Randomize
+                </mat-slide-toggle>
+            </td>
+        </ng-container>
+
+        <tr *matHeaderRowDef="displayedColumns; sticky: true" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+</div>

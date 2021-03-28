@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+}
+
+.total-spacer {
+    flex: 1 1 auto;
+}
+
+.right-spaced {
+    margin-right: 10pt;
+}
+
+.right {
+    align-content: end;
+}
+
+mat-slider {
+    width: 300px;
+}
+
+.slider-row {
+    flex: 0 0 350px;
+}
