@@ -1,5 +1,8 @@
-## People distribution using FogFlow
-### How to run
+# People distribution using FogFlow
+## Abstract
+The organizers of an exhibition with several booths are trying to avoid overcrowding, so visitors could be distributed smoothly and enjoy the exhibition. They mount sensors at each booth so to know the number of people currently at each booth. Each booth has an informative panel which, based on the data from other booths, suggests visitors the closest booth to visit next in a way that the population is smoothly distributed. The overall number of visitors of each booth is reported to the cloud for information aggregation to be queried for the crowded time of the day and other metrics.
+
+## How to run
 #### Requirements
 * node
 * angular
@@ -44,6 +47,6 @@ You can then find the people counter dashboard [here][3].
 [2]: http://localhost:3000
 [3]: http://localhost:4200
 
-#### Docs
+## Docs
 
 Inside docs folder.
